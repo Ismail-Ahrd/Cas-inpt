@@ -1,11 +1,12 @@
 import React, { useRef, useState } from 'react'
 import {FaUserAlt} from 'react-icons/fa'
 import { Link, useLocation,Navigate, useNavigate} from 'react-router-dom'
-import auth from '../../../firebase'
+import auth, { googleprovider } from '../../../firebase'
 import { useAuth } from '../../Context/Authcontext'
-import { signInWithEmailAndPassword } from 'firebase/auth'
+import { signInWithEmailAndPassword ,signInWithPopup} from 'firebase/auth'
 
 const Signin = () => {
+    
     const location = useLocation();
     const navigate=useNavigate()
     const from =location.state?.from?.pathname || '/'
@@ -34,6 +35,26 @@ const Signin = () => {
         }
         setLoading(false)
     }
+    async function signingoogle(){
+        try{
+            setLoading(true)
+            setError('')
+            await signInWithPopup(auth,googleprovider)
+            .then((userCredential) => {
+                // Signed in
+                navigate(from,{replace:true})
+            })
+            .catch((error) => {
+                const errorCode = error.code;
+                const errorMessage = error.message;
+                setError(errorMessage)
+            });
+        }catch{
+            setError('Failed to Signin')
+        }
+        setLoading(false)
+    }
+
   return (
     <div className='flex justify-center mt-11'> 
         <form onSubmit={handleSignin} className='flex flex-col gap-7 items-center justify-center md1:w-[700px] w-[400px]'>
@@ -56,6 +77,7 @@ const Signin = () => {
                 </div>
             </div>
             <button disabled={loading} type='submit' className='bg-blue1color text-white font-bold text-sm py-3 hover:bg-blue3color transition-all duration-300 px-8 rounded-3xl'>Sign In</button>
+            <button disabled={loading} onClick={signingoogle} className='w-full bg-blue1color text-white font-bold text-sm py-3 hover:bg-blue3color transition-all duration-300 px-8'>Sign In with google</button>
         </form>
     </div>
   )

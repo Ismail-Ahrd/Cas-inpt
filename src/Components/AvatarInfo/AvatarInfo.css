@@ -1,4 +1,5 @@
 .avatar  {
+    padding: 2px;
     background: #FFFFFF;
     border: 2px solid #2984F3;
     border-radius: 30px;
@@ -9,27 +10,20 @@
 }
 
 .avatar__first {
-    height: 47%;
+    align-items: center;
     border-bottom: 1px solid #2984F3;
     display: flex;
-    align-items: center;
-    justify-content: space-between;
+    gap: 3px;
 }
 
-.avatar__first__img {
-    width: 45%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
+
 
 .avatar__first__img img{
-    width: 140px;
+    border-radius: 100px;
+    width: 70px;
 }
 
 .avatar__first__info {
-    width: 55%;
-    height: 50px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;

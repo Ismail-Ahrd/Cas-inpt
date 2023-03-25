@@ -2,7 +2,9 @@ import React from 'react'
 
 const Payment = () => {
   return (
-    <div>Payment</div>
+    <div className='flex justify-center items-center'>
+      <h1 className='text-3xl text-blue2color font-bold'>NOT YET ADDED</h1>
+    </div>
   )
 }
 

@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 const MyDonationCard = () => {
   return (
@@ -10,7 +11,7 @@ const MyDonationCard = () => {
         <div className='flex-1 p-5 justify-start pt-6 items-start flex flex-col gap-6'>
           <h3 className='text-blue2color font-bold'>You donated: <span className='text-blue4color'>100mad</span></h3>
           <h3 className='text-blue2color font-bold'>Total donation : <span className='text-blue4color'>2000mad</span></h3>
-          <button className='text-bgcolor text-sm font-medium bg-blue2color px-12 py-1 rounded-xl hover:bg-opacity-50 duration-300'>Go to event page</button>
+          <Link to ={'/event'}><button className='text-bgcolor text-sm font-medium bg-blue2color px-12 py-1 rounded-xl hover:bg-opacity-50 duration-300'>Go to event page</button></Link>
         </div>
     </div>
   )

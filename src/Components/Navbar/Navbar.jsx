@@ -11,8 +11,14 @@ export default function Navbar() {
   const pathname=location.pathname
   console.log(pathname);
   const {currentUser}=useAuth()
+  console.log(currentUser);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [showAvatarInfo, setShowAvatarInfo] = useState(false);
+
+  useEffect(()=>{
+    setShowAvatarInfo(false)
+    window.scrollTo({top:0})
+  },[location])
 
   const showMenu = () =>{
     setIsMenuOpen(!isMenuOpen);
@@ -44,9 +50,11 @@ export default function Navbar() {
                       <button className='navbar__links__right__avatar' onClick={showAvatarInfos}>
                         <img src='src/assets/avatar.png' alt='Avatar' />
                       </button>: 
-                      <button className='navbar__links__right__login bg-blue2color  hover:bg-opacity-50 duration-300'>
-                        <Link to="/signin">Sign In</Link>
-                      </button>
+                      <Link className='navbar__links__right__login bg-blue2color  hover:bg-opacity-50 duration-300' to="/signin">
+                        <button className='text-white'>
+                          Sign In
+                        </button>
+                      </Link>
                   }
                   </li>
               </ul>

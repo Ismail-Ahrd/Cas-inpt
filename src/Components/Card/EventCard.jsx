@@ -1,5 +1,7 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 import event from '../../assets/event.png'
+import ProgressBar from '../Util/ProgressBar'
 
 const EventCard = () => {
   return (
@@ -20,10 +22,10 @@ const EventCard = () => {
                 </div>
                 <div>
                     <div className='w-full flex flex-col gap-3 justify-center items-center'>
-                        <a href='#' className='py-3 px-16 bg-blue2color rounded-3xl text-bgcolor font-bold text-sm hover:bg-opacity-40 transition-all duration-300'>Lire Plus</a>
+                        <Link to={'/event'} className='py-3 px-16 bg-blue2color rounded-3xl text-bgcolor font-bold text-sm hover:bg-opacity-40 transition-all duration-300'>Lire Plus</Link>
                         <div className='flex gap-1 pt-1'>
-                            <a href='#' className='py-3 px-8 bg-blue2color rounded-3xl text-bgcolor font-bold text-sm hover:bg-opacity-40 transition-all duration-300'>Faire un don</a >
-                            <a href='#' className='py-3 px-8 bg-blue2color rounded-3xl text-bgcolor font-bold text-sm hover:bg-opacity-40 transition-all duration-300'>Autrement</a>
+                            <Link to='/payment' className='py-3 px-8 bg-blue2color rounded-3xl text-bgcolor font-bold text-sm hover:bg-opacity-40 transition-all duration-300'>Faire un don</Link >
+                            <Link to='/payment' className='py-3 px-8 bg-blue2color rounded-3xl text-bgcolor font-bold text-sm hover:bg-opacity-40 transition-all duration-300'>Autrement</Link>
                         </div>
                     </div>
                 </div>
@@ -31,8 +33,10 @@ const EventCard = () => {
         </div>
         <div className='w-full self-start border-2 border-bgcolor rounded-xl p-2  '>
             <h3 className='font-bold text-blue2color text-lg'>Progression :</h3>
-            <div>
-
+            <div className=' flex justify-between items-center gap-2'>
+               <p className='font-bold text-blue2color '> 1 mars</p>
+                <ProgressBar/>
+                <p className='font-bold text-blue2color '>1 avril</p>
             </div>
         </div>
     </div>

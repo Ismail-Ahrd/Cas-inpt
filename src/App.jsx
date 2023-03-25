@@ -10,6 +10,7 @@ import Donation from './Components/Donation/Donation'
 import Footer from './Components/Footer/Footer'
 import RequireAuth from './Route/RequireAuth'
 import Payment from './Components/Payment/Payment'
+import Event from './Components/Events/Event'
 
 
 function App() {
@@ -23,6 +24,7 @@ function App() {
             <Route path='/signup' element={<Signup/>} />
             <Route path='/signin' element={<Signin/>} />
             <Route path='/events' element={<Events/>} />
+            <Route path='/event' element={<Event/>} />
             <Route path='/mydonation' element={<MyDonation/>} />
             <Route path='/donation' element={<Donation/>} />
             {/* protected route */}

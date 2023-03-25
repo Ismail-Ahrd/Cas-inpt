@@ -21,11 +21,15 @@ export default function AvatarInfo({setShowAvatarInfo}) {
     <div className='avatar'>
         <div className='avatar__first'>
             <div className='avatar__first__img'>
-                <img src="src/assets/Avatar.png" alt="Avatar" />
+                {
+                    currentUser?.photoURL
+                    ?<img src={`${currentUser.photoURL}`} alt="Avatar" />
+                    :<img src="src/assets/Avatar.png" alt="Avatar" />
+                }
             </div>
-            <div className='avatar__first__info'>
-                <h4>{currentUser?.name||'user'}</h4>
-                <p>{currentUser?.email}</p>
+            <div className='avatar__first__info '>
+                <h4>{currentUser?.displayName||'user'}</h4>
+                <p >{currentUser?.email}</p>
                 <Link to ={'/mydonation'}><p className='underline'>Go to myDonation</p></Link>
             </div>
         </div>
@@ -34,7 +38,7 @@ export default function AvatarInfo({setShowAvatarInfo}) {
                 <div className='avatar__second__icon'><IoMdSettings /></div>
                 <p>Settings</p>
                 <div className='avatar__second__icon'><FiLogOut /></div>
-                <p onClick={handleSignout}>Logout</p>
+                <p onClick={handleSignout} className='cursor-pointer text-blue2color hover:text-blue4color'>Logout</p>
             </div>
         </div>
         <div className='avatar__last'>
