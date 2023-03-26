@@ -48,7 +48,11 @@ export default function Navbar() {
                   <li>
                   {currentUser ? 
                       <button className='navbar__links__right__avatar' onClick={showAvatarInfos}>
-                        <img src='src/assets/avatar.png' alt='Avatar' />
+                        {
+                        currentUser?.photoURL
+                        ?<img className='rounded-full' src={`${currentUser.photoURL}`} alt="Avatar" />
+                        :<img src="src/assets/Avatar.png" alt="Avatar" />
+                        }
                       </button>: 
                       <Link className='navbar__links__right__login bg-blue2color  hover:bg-opacity-50 duration-300' to="/signin">
                         <button className='text-white'>

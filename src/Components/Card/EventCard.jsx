@@ -1,11 +1,18 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import event from '../../assets/event.png'
+import { useAuth } from '../../Context/Authcontext'
 import ProgressBar from '../Util/ProgressBar'
 
 const EventCard = () => {
+    const {currentUser}=useAuth()
   return (
-    <div className='lg:w-[900px] md1:w-[700px] w-[400px] rounded-3xl bg-blue3color flex flex-col justify-center items-center gap-3 px-4 py-1'>
+    <div className='lg:w-[900px] md1:w-[700px] w-[400px] rounded-3xl bg-blue3color relative flex flex-col justify-center items-center gap-3 px-4 py-1'>
+        {
+            currentUser?.email=="admin@gmail.com" && (
+                <button className='hover:bg-red-400 duration-300 text-sm text-bgcolor rounded-tr-3xl bg-red-600 px-8 py-2 absolute top-0 right-0'>Remove Event</button>
+            )
+        }
         <h1 className='font-[1000] text-[1.25rem] text-blue2color'>Event</h1>
         <div className='flex md1:flex-row flex-col  gap-3 w-full justify-center '>
             <div className=' rounded-xl md1:w-[50%] w-full h-[230px]'>

@@ -20,9 +20,9 @@ export default function MainPage({title, text,button,direction}) {
             </div>
             <div className='main__right'>
                 <img className='main__logo ' src="src/assets/logo1.png" alt="Logo" />
-                <Link className='main__icon main__icon__books hover:bg-slate-300 rounded-full p-2 cursor-pointer transition-all duration-500' to={'/payment'}><img  src="src/assets/books.png" alt="Book" /></Link>
-                <Link className='main__icon main__icon__money hover:bg-slate-300 rounded-full p-2 cursor-pointer transition-all duration-500' to={'/payment'}><img  src="src/assets/money.png" alt="Money" /></Link>
-                <Link className='main__icon main__icon__clothes hover:bg-slate-300 rounded-full p-2 cursor-pointer transition-all duration-500' to={'/payment'}><img src="src/assets/clothes.png" alt="Clothes" /></Link>
+                <Link className='animate-pulse main__icon main__icon__books hover:bg-slate-300 rounded-full p-2 cursor-pointer transition-all duration-500' to={'/payment'}><img  src="src/assets/books.png" alt="Book" /></Link>
+                <Link className='animate-pulse main__icon main__icon__money hover:bg-slate-300 rounded-full p-2 cursor-pointer transition-all duration-500' to={'/payment'}><img  src="src/assets/money.png" alt="Money" /></Link>
+                <Link className='animate-pulse main__icon main__icon__clothes hover:bg-slate-300 rounded-full p-2 cursor-pointer transition-all duration-500' to={'/payment'}><img src="src/assets/clothes.png" alt="Clothes" /></Link>
             </div>
         </div>
     </div>   

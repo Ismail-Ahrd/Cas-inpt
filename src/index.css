@@ -109,3 +109,14 @@ spin {
   -webkit-text-fill-color: transparent;
   background-clip: text;
 }
+
+
+@keyframes pulse {
+  50% {
+    --tw-bg-opacity: 1;
+    background-color: rgb(203 213 225 / var(--tw-bg-opacity));
+  }
+}
+.animate-pulse {
+  animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
