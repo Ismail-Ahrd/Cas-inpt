@@ -5,7 +5,7 @@ const Card = () => {
   return (
     <div className=''>
         <div className='w-[200px] h-[250px]  bg-blue1color '>
-            <div className='h-full  bg-blue1color hover:opacity-100 opacity-0 transition-all duration-300 flex  test gap-4 justify-center items-end w-full pb-4'>
+            <div className='h-full  bg-blue1color hover:opacity-100 lg:opacity-0 transition-all duration-300 flex  test gap-4 justify-center items-end w-full pb-4'>
                 <div className='w-[40px] h-[40px] rounded-full hover:bg-gray-400 cursor-pointer transition-all duration-300 bg-white flex justify-center items-center'>
                     <FaFacebookF/>
                 </div>

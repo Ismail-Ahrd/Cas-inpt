@@ -5,6 +5,7 @@ import AvatarInfo from '../AvatarInfo/AvatarInfo';
 import { Link } from 'react-router-dom';
 import { useAuth } from '../../Context/Authcontext';
 import { useLocation } from 'react-router-dom';
+import AvatarImage from '../AvatarInfo/AvatarImage';
 
 export default function Navbar() {
   const location=useLocation()
@@ -47,13 +48,9 @@ export default function Navbar() {
                   <li className='navbar__links__right__trad'>Fr-<span>En</span></li>
                   <li>
                   {currentUser ? 
-                      <button className='navbar__links__right__avatar' onClick={showAvatarInfos}>
-                        {
-                        currentUser?.photoURL
-                        ?<img className='rounded-full' src={`${currentUser.photoURL}`} alt="Avatar" />
-                        :<img src="src/assets/Avatar.png" alt="Avatar" />
-                        }
-                      </button>: 
+                      <div className='navbar__links__right__avatar' onClick={showAvatarInfos}>
+                        <AvatarImage/>
+                      </div>: 
                       <Link className='navbar__links__right__login bg-blue2color  hover:bg-opacity-50 duration-300' to="/signin">
                         <button className='text-white'>
                           Sign In
@@ -63,9 +60,9 @@ export default function Navbar() {
                   </li>
               </ul>
         </nav>
-        <button className='navbar__menu' onClick={showMenu}>
+        <div className='navbar__menu self-center cursor-pointer' onClick={showMenu}>
             {isMenuOpen ? <FaTimes /> : <FaBars />}
-        </button>
+        </div>
       </div>
       
       <div className='second'>

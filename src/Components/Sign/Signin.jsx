@@ -14,7 +14,7 @@ const Signin = () => {
     const [loading,setLoading]=useState(false)
     const emailref=useRef()
     const passwordref=useRef()
-    const {currentUser}=useAuth()
+    
     async function handleSignin(e){
         e.preventDefault()
         try{
@@ -57,7 +57,7 @@ const Signin = () => {
 
   return (
     <div className='flex justify-center mt-11'> 
-        <form onSubmit={handleSignin} className='flex flex-col gap-7 items-center justify-center md1:w-[700px] w-[400px]'>
+        <form onSubmit={handleSignin} className='flex flex-col gap-7 items-center justify-center md1:w-[700px] w-[370px]'>
             <FaUserAlt size={30} className="text-blue4color"/>
             <div className='flex flex-col  gap-14 w-full'>
                 <h2 className='text-3xl font-bold md1:w-[700px] w-[400px] text-center  gradient '>Rejoignez votre session:</h2>
@@ -65,11 +65,11 @@ const Signin = () => {
                     <h2 className='text-sm font-bold text-red-500'>{error}</h2>
                 )}
                 <div className='flex gap-7 '>
-                    <h3 className='text-lg font-semibold text-blue1color w-[32%] '>Email:</h3>
+                    <h3 className='text-lg font-semibold text-blue1color sm:w-[32%] flex-1 sm:flex-none '>Email:</h3>
                     <input required ref={emailref} type="email" className='flex-1 bg-input rounded-xl outline-1 outline-blue1color text-blue2color py-1 px-2'/>
                 </div>
                 <div className='flex gap-7 '>
-                    <h3 className='text-lg font-semibold text-blue1color w-[32%]'>Mot de passe:</h3>
+                    <h3 className='text-lg font-semibold text-blue1color sm:w-[32%] flex-1 sm:flex-none'>Mot de passe:</h3>
                     <input required  ref={passwordref} type="password" className='flex-1 bg-input rounded-xl outline-1 outline-blue1color text-blue2color py-1 px-2'/>
                 </div>
                 <div>

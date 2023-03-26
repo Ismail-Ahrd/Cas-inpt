@@ -7,7 +7,7 @@ export default function Footer() {
     <div className='footer'>
         <div className='footer__first'>
             <img src="src/assets/Logo.png" alt="Logo" />
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. A aliquid at iure, neque laborum consequatur qui blanditiis aspernatur perspiciatis minima exercitationem veniam. Corrupti esse reprehenderit blanditiis ipsa culpa voluptatem possimus!</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. A aliquid at iure, neque laborum consequatur!</p>
             <button>Contact us</button>
         </div>
         <footer className="footer__second">

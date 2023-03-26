@@ -3,10 +3,10 @@ import { Link } from 'react-router-dom'
 
 const MyDonationCard = () => {
   return (
-    <div className='w-[700px] rounded-xl p-2 px-4 bg-blue3color flex'>
+    <div className='sm:w-[700px] w-[370px] sm:flex-row flex-col justify-center items-center rounded-xl p-2 px-4 bg-blue3color flex'>
         <div>
-          <h3 className='text-blue2color font-bold'>Event: Azillal</h3>
-          <div className='w-[150px] h-[150px] bg-bgcolor'></div>
+          <h3 className='text-blue2color font-bold sm:text-left text-center'>Event: Azillal</h3>
+          <div className='sm:w-[150px] w-[300px] h-[150px] bg-bgcolor'></div>
         </div>
         <div className='flex-1 p-5 justify-start pt-6 items-start flex flex-col gap-6'>
           <h3 className='text-blue2color font-bold'>You donated: <span className='text-blue4color'>100mad</span></h3>

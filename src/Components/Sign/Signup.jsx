@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { useRef } from 'react'
 import {FaUserAlt} from 'react-icons/fa'
-import { createUserWithEmailAndPassword} from 'firebase/auth'
+import { createUserWithEmailAndPassword,updateProfile} from 'firebase/auth'
 import auth from '../../../firebase'
 import { useLocation, useNavigate } from 'react-router-dom'
 
@@ -23,8 +23,7 @@ const Signup = () => {
                 setError('')
                 await createUserWithEmailAndPassword(auth, emailref.current.value, passwordref.current.value)
                     .then((userCredential) => {
-                        // Signed in 
-                        navigate(from,{replace:true})
+                        // Signed in  
                     })
                     .catch((error) => {
                         const errorCode = error.code;
@@ -34,6 +33,12 @@ const Signup = () => {
                         setError(errorMessage)
                         // ..
                 })
+                await updateProfile(auth.currentUser, { displayName: usernameref.current.value }).then(()=>{
+                    navigate(from,{replace:true})
+                })
+                .catch(
+                    (err) => console.log(err)
+                );
                 // await signup(emailref.current.value, passwordref.current.value)
             }catch{
                 console.log('pleaase');
@@ -56,7 +61,7 @@ const Signup = () => {
     // }
   return (
     <div className='flex justify-center mt-6'> 
-        <form onSubmit={handleRegistre} className='flex flex-col gap-7 items-center justify-center md1:w-[700px] w-[400px]'>
+        <form onSubmit={handleRegistre} className='flex flex-col gap-7 items-center justify-center md1:w-[700px] w-[370px]'>
             <FaUserAlt size={30} className="text-blue4color"/>
             <div className='flex flex-col gap-11'>
                 <h2 className='text-3xl font-bold text-blue1color gradient'>Rejoignez notre groupe en s’inscrivant:</h2>
@@ -64,19 +69,19 @@ const Signup = () => {
                     <h2 className='text-sm font-bold text-red-500'>{error}</h2>
                 )}
                 <div className='flex gap-7 w-full'>
-                    <h3 className='text-lg font-semibold text-blue1color w-[32%]'>Username:</h3>
+                    <h3 className='text-lg font-semibold text-blue1color sm:w-[32%] flex-1 sm:flex-none'>Username:</h3>
                     <input required ref={usernameref} type="text" className='flex-1 bg-input rounded-xl outline-1 outline-blue1color text-blue2color py-1 px-2'/>
                 </div>
                 <div className='flex gap-7 w-full'>
-                    <h3 className='text-lg font-semibold text-blue1color w-[32%] '>Email:</h3>
+                    <h3 className='text-lg font-semibold text-blue1color sm:w-[32%] flex-1 sm:flex-none '>Email:</h3>
                     <input required ref={emailref} type="email" className='flex-1 bg-input rounded-xl outline-1 outline-blue1color text-blue2color py-1 px-2'/>
                 </div>
                 <div className='flex gap-7 w-full'>
-                    <h3 className='text-lg font-semibold text-blue1color w-[32%]'>Mot de passe:</h3>
+                    <h3 className='text-lg font-semibold text-blue1color sm:w-[32%] flex-1 sm:flex-none'>Mot de passe:</h3>
                     <input required ref={passwordref} type="password" className='flex-1 bg-input rounded-xl outline-1 outline-blue1color text-blue2color py-1 px-2'/>
                 </div>
                 <div className='flex gap-7 w-full'>
-                    <h3 className='text-lg font-semibold text-blue1color w-[32%]'>Confirmer mdp:</h3>
+                    <h3 className='text-lg font-semibold text-blue1color sm:w-[32%] flex-1 sm:flex-none'>Confirmer:</h3>
                     <input required ref={confirmref} type="password" className='flex-1 bg-input rounded-xl outline-1 outline-blue1color text-blue2color  py-1 px-2'/>
                 </div>
             </div>

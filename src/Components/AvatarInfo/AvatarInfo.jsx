@@ -5,6 +5,7 @@ import { Link } from 'react-router-dom';
 import { useAuth } from '../../Context/Authcontext';
 import auth from '../../../firebase';
 import { signOut } from 'firebase/auth';
+import AvatarImage from './AvatarImage';
 
 
 export default function AvatarInfo({setShowAvatarInfo}) {
@@ -21,11 +22,7 @@ export default function AvatarInfo({setShowAvatarInfo}) {
     <div className='avatar'>
         <div className='avatar__first'>
             <div className='avatar__first__img'>
-                {
-                    currentUser?.photoURL
-                    ?<img src={`${currentUser.photoURL}`} alt="Avatar" />
-                    :<img src="src/assets/Avatar.png" alt="Avatar" />
-                }
+               <AvatarImage/>
             </div>
             <div className='avatar__first__info '>
                 <h4>{currentUser?.displayName||'user'}</h4>

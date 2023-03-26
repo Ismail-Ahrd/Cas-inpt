@@ -2,10 +2,13 @@ import React from 'react'
 import { useAuth } from '../../Context/Authcontext'
 import EventCard from '../Card/EventCard'
 import MainPage from '../MainPage/MainPage'
+import {MdAddCircle} from 'react-icons/md'
+import {BsFillFastForwardFill} from 'react-icons/bs'
+import {FaBackward} from 'react-icons/fa'
 
 const Events = () => {
   const {currentUser}=useAuth()
-  const titleDescription="Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni, maxime? Obcaecati, nesciunt laborum magni maiores eum asperiores ex rem nisi dicta? Sit repellat consequatur ut sequi recusandae cupiditate, perspiciatis praesentium?"
+  const titleDescription="Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni, maxime? Obcaecati, nesciunt"
   return (
     <div>
       <MainPage title="Events" text={titleDescription} />
@@ -14,7 +17,7 @@ const Events = () => {
             <h3 className='text-xl font-bold text-blue2color'>The last 3 /10 events:</h3>
             {
             currentUser?.email=="admin@gmail.com" && (
-                <button className='hover:bg-green-400 duration-300  text-bgcolor rounded-xl bg-green-600 px-12 text-lg py-2'>Add Event</button>
+                <button className='hover:bg-green-400 duration-300  text-bgcolor rounded-xl bg-green-600 px-12 text-lg py-2 flex gap-3'>Add Event <MdAddCircle className='text-bgcolor' size={27}/></button>
             )
               }
             <EventCard/>
@@ -23,9 +26,9 @@ const Events = () => {
             <EventCard/>
         </div>
         <div className='w-full items-center justify-center flex'>
-            <div className='flex justify-between w-[900px]'>
-                <button className='text-blue4color font-bold text-xl hover:text-opacity-40 duration-300'>Previous</button>
-                <button className='text-blue4color font-bold text-xl hover:text-opacity-40 duration-300'>Next</button>
+            <div className='flex justify-between sm:w-[900px] w-full'>
+                <button className='text-blue4color font-bold text-xl hover:text-opacity-40 duration-300 flex gap-3'><FaBackward size={27}/>Previous</button>
+                <button className='text-blue4color font-bold text-xl hover:text-opacity-40 duration-300 flex gap-3'>Next <BsFillFastForwardFill size={27}/></button>
             </div>
         </div>
       </div>

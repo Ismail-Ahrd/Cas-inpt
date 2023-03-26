@@ -3,6 +3,9 @@ import Navbar from '../Navbar/Navbar'
 import event from '../../assets/event.png'
 import ProgressBar from '../Util/ProgressBar'
 import ActivitiesSwipper from '../Util/ActivitiesSwipper'
+import { FaDonate } from 'react-icons/fa'
+import { GiClothes } from 'react-icons/gi'
+import { Link } from 'react-router-dom'
 
 const Event = () => {
   return (
@@ -27,16 +30,14 @@ const Event = () => {
                 </div>
             </div>
             <div className='flex w-full md:gap-20 gap-2 pt-1 mt-3'>
-                <a href='#' className='py-3 md:px-16 px-8 bg-blue1color rounded-3xl text-bgcolor font-bold text-sm hover:bg-opacity-40 transition-all duration-300'>Faire un don</a >
-                <a href='#' className='py-3 md:px-16 px-8 bg-blue1color rounded-3xl text-bgcolor font-bold text-sm hover:bg-opacity-40 transition-all duration-300'>Autrement</a>
+                <Link to='/payment' className='py-3 lg:px-8 px-4 bg-blue2color rounded-3xl text-bgcolor font-bold text-sm hover:bg-opacity-40 transition-all duration-300 flex gap-3 items-center'>Faire un don <FaDonate size={27}/></Link >
+                <Link to='/payment' className='py-3 lg:px-8 px-3 bg-blue2color rounded-3xl text-bgcolor font-bold text-sm hover:bg-opacity-40 transition-all duration-300 flex gap-3 items-center'>Autrement <GiClothes size={27}/></Link>
             </div>
             <div className='w-full mt-8 '>
                 <h1 className='text-blue2color font-bold text-2xl text-center'>Activities</h1>
                 <ActivitiesSwipper/>
             </div>
         </div>
-       
-        
     </div>
   )
 }
