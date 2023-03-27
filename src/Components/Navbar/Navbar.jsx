@@ -6,13 +6,12 @@ import { Link } from 'react-router-dom';
 import { useAuth } from '../../Context/Authcontext';
 import { useLocation } from 'react-router-dom';
 import AvatarImage from '../AvatarInfo/AvatarImage';
+import logo from '../../assets/Logo.png'
 
 export default function Navbar() {
   const location=useLocation()
   const pathname=location.pathname
-  console.log(pathname);
   const {currentUser}=useAuth()
-  console.log(currentUser);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [showAvatarInfo, setShowAvatarInfo] = useState(false);
 
@@ -35,7 +34,7 @@ export default function Navbar() {
         <nav className="navbar">
             <div className="navbar__logo">
               <Link to="/">
-                  <img src="src/assets/Logo.png" alt="Logo" />
+                  <img src={logo} alt="Logo" />
               </Link> 
             </div>
               <div className={`navbar__links ${isMenuOpen ? 'navbar__links__responsive' : ''}`}>

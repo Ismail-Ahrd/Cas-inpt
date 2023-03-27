@@ -6,7 +6,7 @@ const titleDescription="Lorem ipsum dolor sit amet consectetur adipisicing elit.
 const Donation = () => {
   return (
     <div>
-        <MainPage title="Donation" text={titleDescription} button="Donate" direction='/payment' />
+        <MainPage title="Donation" text={titleDescription} button="Donate" direction='/stripe' />
     </div>
   )
 }

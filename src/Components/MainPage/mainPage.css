@@ -142,32 +142,34 @@
 
     .main__left {
         width: 350px;
-        margin-bottom: 50px;
+        margin-bottom: 0px;
     } 
 
     .main__title {
-        font-size: 40px;
+        font-size: 30px;
         line-height: 50px;
     }
 
     .main__text {
-        font-size: 20px;
+        font-size: 14px;
         line-height: 25px;
     } 
 
     .main__icon{
-        width: 100px;
-        height: 100px;
+        width: 80px;
+        height: 80px;
     }  
     
     .main__logo{
+        width: 250px;
+        height: 250px;
         grid-column-start: 3;
         grid-row-start: 3;
     }
     
     .main__icon__books{
         grid-column-start: 9;
-        grid-row-start: 1;
+        grid-row-start: 2;
     }
     
     .main__icon__money{
@@ -176,7 +178,7 @@
     }
     
     .main__icon__clothes{
-        grid-row-start: 11;
+        grid-row-start: 10;
         grid-column-start: 5;
     }
 }

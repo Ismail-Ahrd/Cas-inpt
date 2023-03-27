@@ -34,7 +34,7 @@ const EventCard = () => {
                     <div className='w-full flex flex-col gap-2 justify-center items-center'>
                         <Link to={'/event'} className='py-3 px-16 bg-blue2color rounded-3xl text-bgcolor font-bold text-sm hover:bg-opacity-40 transition-all duration-300'>Lire Plus</Link>
                         <div className='flex gap-1 pt-1'>
-                            <Link to='/payment' className='py-3 lg:px-8 px-4 bg-blue2color rounded-3xl text-bgcolor font-bold text-sm hover:bg-opacity-40 transition-all duration-300 flex gap-3 items-center'>Faire un don <FaDonate size={27}/></Link >
+                            <Link to='/stripe' className='py-3 lg:px-8 px-4 bg-blue2color rounded-3xl text-bgcolor font-bold text-sm hover:bg-opacity-40 transition-all duration-300 flex gap-3 items-center'>Faire un don <FaDonate size={27}/></Link >
                             <Link to='/payment' className='py-3 lg:px-8 px-3 bg-blue2color rounded-3xl text-bgcolor font-bold text-sm hover:bg-opacity-40 transition-all duration-300 flex gap-3 items-center'>Autrement <GiClothes size={27}/></Link>
                         </div>
                     </div>

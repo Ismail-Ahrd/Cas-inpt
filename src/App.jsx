@@ -11,6 +11,7 @@ import Footer from './Components/Footer/Footer'
 import RequireAuth from './Route/RequireAuth'
 import Payment from './Components/Payment/Payment'
 import Event from './Components/Events/Event'
+import Stripe from './Components/Payment/Stripe'
 
 
 function App() {
@@ -30,6 +31,7 @@ function App() {
             {/* protected route */}
             <Route element={<RequireAuth/>} >
               <Route path='/payment' element={<Payment/>} />
+              <Route path='/stripe' element={<Stripe/>} />
             </Route>
         </Routes>
         <Footer />

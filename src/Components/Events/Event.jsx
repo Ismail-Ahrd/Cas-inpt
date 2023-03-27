@@ -30,7 +30,7 @@ const Event = () => {
                 </div>
             </div>
             <div className='flex w-full md:gap-20 gap-2 pt-1 mt-3'>
-                <Link to='/payment' className='py-3 lg:px-8 px-4 bg-blue2color rounded-3xl text-bgcolor font-bold text-sm hover:bg-opacity-40 transition-all duration-300 flex gap-3 items-center'>Faire un don <FaDonate size={27}/></Link >
+                <Link to='/stripe' className='py-3 lg:px-8 px-4 bg-blue2color rounded-3xl text-bgcolor font-bold text-sm hover:bg-opacity-40 transition-all duration-300 flex gap-3 items-center'>Faire un don <FaDonate size={27}/></Link >
                 <Link to='/payment' className='py-3 lg:px-8 px-3 bg-blue2color rounded-3xl text-bgcolor font-bold text-sm hover:bg-opacity-40 transition-all duration-300 flex gap-3 items-center'>Autrement <GiClothes size={27}/></Link>
             </div>
             <div className='w-full mt-8 '>
