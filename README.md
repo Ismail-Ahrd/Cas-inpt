@@ -1,2 +1,2 @@
 # Cas-inpt
-A repo for a inpt club website
+A website for an inpt club cas
