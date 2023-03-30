@@ -17,7 +17,6 @@ module.exports = {
       },
       screens:{
         md1:'750px',
-       
       },
       animation: {
         slideup: 'slideup 1s ease-in-out',

@@ -1,0 +1,13 @@
+import React from 'react'
+import { useLocation,Navigate,Outlet } from 'react-router-dom'
+import { useAuth } from '../Context/Authcontext'
+
+const RequireAuthAdmin = () => {
+    const {currentUser}=useAuth()
+    const location=useLocation()
+  return (
+    (currentUser?.email=="admin@gmail.com")?<Outlet/>:<Navigate to="/signin" state={{ from: location }} replace />
+    )
+}
+
+export default RequireAuthAdmin

@@ -7,7 +7,7 @@ import clothes from '../../assets/clothes.png'
 import logo1 from '../../assets/logo1.png'
 
 
-export default function MainPage({title, text,button,direction}) {
+export default function MainPage({title, text,button,direction,image}) {
   return (
     <div className="mainPage">
         <div className="mainPage__notification">A new event was added!!!</div>
@@ -24,10 +24,10 @@ export default function MainPage({title, text,button,direction}) {
                 }
             </div>
             <div className='main__right'>
-                <img className='main__logo ' src={logo1} alt="Logo" />
-                <Link className='animate-pulse main__icon main__icon__books hover:bg-slate-300 rounded-full p-2 cursor-pointer transition-all duration-500' to={'/payment'}><img  src={books} alt="Book" /></Link>
-                <Link className='animate-pulse main__icon main__icon__money hover:bg-slate-300 rounded-full p-2 cursor-pointer transition-all duration-500' to={'/payment'}><img  src={money} alt="Money" /></Link>
-                <Link className='animate-pulse main__icon main__icon__clothes hover:bg-slate-300 rounded-full p-2 cursor-pointer transition-all duration-500' to={'/payment'}><img src={clothes} alt="Clothes" /></Link>
+                <img className='main__logo ' src={image} alt="Logo" />
+                <Link className='animate-pulse main__icon main__icon__books hover:bg-slate-300 rounded-full p-2 cursor-pointer transition-all duration-500' to={'/autrement'}><img  src={books} alt="Book" /></Link>
+                <Link className='animate-pulse main__icon main__icon__money hover:bg-slate-300 rounded-full p-2 cursor-pointer transition-all duration-500' to={'/stripe'}><img  src={money} alt="Money" /></Link>
+                <Link className='animate-pulse main__icon main__icon__clothes hover:bg-slate-300 rounded-full p-2 cursor-pointer transition-all duration-500' to={'/autrement'}><img src={clothes} alt="Clothes" /></Link>
             </div>
         </div>
     </div>   

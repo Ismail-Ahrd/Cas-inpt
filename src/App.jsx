@@ -9,10 +9,11 @@ import Navbar from './Components/Navbar/Navbar'
 import Donation from './Components/Donation/Donation'
 import Footer from './Components/Footer/Footer'
 import RequireAuth from './Route/RequireAuth'
-import Payment from './Components/Payment/Payment'
+import Autrement from './Components/Payment/Autrement'
 import Event from './Components/Events/Event'
 import Stripe from './Components/Payment/Stripe'
-
+import RequireAuthAdmin from './Route/RequireAuthAdmin'
+import Addevent from './Components/Addevent/Addevent'
 
 function App() {
   return (
@@ -25,13 +26,16 @@ function App() {
             <Route path='/signup' element={<Signup/>} />
             <Route path='/signin' element={<Signin/>} />
             <Route path='/events' element={<Events/>} />
-            <Route path='/event' element={<Event/>} />
+            <Route path='/events/:id' element={<Event/>} />
             <Route path='/mydonation' element={<MyDonation/>} />
             <Route path='/donation' element={<Donation/>} />
             {/* protected route */}
             <Route element={<RequireAuth/>} >
-              <Route path='/payment' element={<Payment/>} />
+              <Route path='/autrement' element={<Autrement/>} />
               <Route path='/stripe' element={<Stripe/>} />
+            </Route>
+            <Route element={<RequireAuthAdmin/>} >
+              <Route path='/addevent' element={<Addevent/>} />
             </Route>
         </Routes>
         <Footer />

@@ -38,7 +38,6 @@ const Signup = () => {
                 );
                 // await signup(emailref.current.value, passwordref.current.value)
             }catch{
-                console.log('pleaase');
                 setError('Failed to create an account')
             }
             setLoading(false)
